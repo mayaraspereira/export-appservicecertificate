@@ -13,7 +13,7 @@ Before making a local copy, make sure that:
 
 ### Export-AppServiceCertificate_v1.ps1
 
-The **Export-AppServiceCertificate_v1.ps1** was made to use the AzureRM PowerShell cmdlets.  AzureRM PowerShell requires PowerShell version 5.0. You can find a guide of how to install AzureRM PowerShell in the links below:
+The **Export-AppServiceCertificate_v1.ps1** was made for use with AzureRM PowerShell cmdlets.  AzureRM PowerShell requires PowerShell version 5.0. You can find a guide of how to install AzureRM PowerShell in the links below:
 
 - https://docs.microsoft.com/en-us/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.13.0
 - https://www.jgspiers.com/how-to-connect-to-azure-powershell-arm-azuread/
@@ -23,7 +23,7 @@ To use the script, copy the entire script, open the Windows PowerShell ISE and p
 
 ### Export-AppServiceCertificate_v2.ps1
 
-The **Export-AppServiceCertificate_v2.ps1** was made to use the Az PowerShell cmdlets.  PowerShell 7.0.6 LTS, PowerShell 7.1.3, or higher is the recommended version of PowerShell for use with the Azure Az PowerShell. You can find a guide of how to install Az PowerShell in the link below:
+The **Export-AppServiceCertificate_v2.ps1** was made for use with Az PowerShell cmdlets.  PowerShell 7.0.6 LTS, PowerShell 7.1.3, or higher is the recommended version of PowerShell for use with the Azure Az PowerShell. You can find a guide of how to install Az PowerShell in the link below:
 
 - https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-6.5.0
 
