@@ -18,7 +18,11 @@ The **Export-AppServiceCertificate_v1.ps1** was made for use with AzureRM PowerS
 - https://docs.microsoft.com/en-us/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.13.0
 - https://www.jgspiers.com/how-to-connect-to-azure-powershell-arm-azuread/
 
-To use the script, copy the entire script, open the Windows PowerShell ISE and paste it on the PowerShell window. You can run the commands line-by-line or first run the Login-AzureRmAccount cmd and then run the entire script (excluding the Login cmd).
+Because Az PowerShell modules now have all the capabilities of AzureRM PowerShell modules and more, AzureRM PowerShell modules will be retired on 29 February 2024.
+
+If you experience some errors using AzureRM PowerShell modules on PowerShell version 5, read the comments on top of the script.
+
+We recommend use Windows PowerShell ISE or Visual Studio Code to execute the script.
 
 
 ### Export-AppServiceCertificate_v2.ps1
