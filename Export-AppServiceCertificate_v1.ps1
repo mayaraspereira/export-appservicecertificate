@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-##Before starting, edit the fields below and check the information on README
-$loginId = "Your login (prefer to use your User Principal Name)"
-$subscriptionId = "Azure subscription ID"
-=======
 ##Execute the command below to ensure that PowerShell version is 5:
 $PSVersionTable.PSVersion
 
@@ -27,14 +22,14 @@ Import-Module -Name AzureRM
 $loginId = "Your login (prefer to use your User Principal Name)"
 $subscriptionId = "Azure subscription ID"
 $certResourceGroup = "Certificate Resource Group name"
->>>>>>> 30a0fc5... Export-AppServiceCertificate_v1.ps1 Updated
 $certName = "Certificate name created in App Service Certificates"
 
+##Login and set the context
 Login-AzureRmAccount
 Set-AzureRmContext -SubscriptionId $subscriptionId
 
 ## Get the KeyVault Resource Url and KeyVault Secret Name were the certificate is stored
-$resourceId = (Get-AzureRmResource -Name $certName).ResourceId
+$resourceId = (Get-AzureRmResource -ResourceType Microsoft.CertificateRegistration/certificateOrders -Name $certName).ResourceId
 $ascResource = Get-AzureRmResource -ResourceId $resourceId
 $certProps = Get-Member -InputObject $ascResource.Properties.certificates[0] -MemberType NoteProperty
 $certificateName = $certProps[0].Name
@@ -61,10 +56,3 @@ $currentDirectory = (Get-Location -PSProvider FileSystem).ProviderPath
 
 Write-Host "Created an App Service Certificate copy at: $currentDirectory\$certName.pfx"
 Write-Host "PFX password: $pfxPassword"
-
-## --- !! NOTE !! ----
-## Remove the Access Policy required for exporting the certificate once you have exported the certificate to prevent giving the account prolonged access to the KeyVault
-## The account will be completely removed from KeyVault access policy and will prevent to account from accessing any keys/secrets/certificates on the KeyVault, 
-## Run the following command if you are sure that the account is not used for any other access on the KeyVault or login to the portal and change the access policy accordingly.
-# Remove-AzureRmKeyVaultAccessPolicy -ResourceGroupName $keyVaultResourceGroupName -VaultName $keyVaultName -UserPrincipalName $loginId
-# Write-Host "Access to account $loginId has been removed from the KeyVault"
