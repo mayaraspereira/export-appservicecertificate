@@ -1,6 +1,33 @@
+<<<<<<< HEAD
 ##Before starting, edit the fields below and check the information on README
 $loginId = "Your login (prefer to use your User Principal Name)"
 $subscriptionId = "Azure subscription ID"
+=======
+##Execute the command below to ensure that PowerShell version is 5:
+$PSVersionTable.PSVersion
+
+##Install AzureRM (You need elevated privileges to install modules from the PowerShell Gallery): 
+Install-Module -Name AzureRM -AllowClobber
+##Answer Yes or Yes to All to continue with the installation.
+
+##If you already have the AzureRm installed on your system and get some error, try this:
+    Set-PSRepository -Name PSGallery -SourceLocation https://www.powershellgallery.com/api/v2 -InstallationPolicy Trusted
+    Register-PSRepository -Name PSGallery1 -SourceLocation https://www.powershellgallery.com/api/v2/ -InstallationPolicy Trusted
+    Set-PSRepository -Name PSGallery -SourceLocation https://www.powershellgallery.com/api/v2/ -InstallationPolicy Trusted
+    Update-Module -Name AzureRM
+
+##PowerShell script execution policy must be set to remote signed:
+set-executionpolicy remotesigned
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+# Load the latest version Azure PowerShell:
+Import-Module -Name AzureRM
+
+##Before starting, edit the fields below and check the information on README
+$loginId = "Your login (prefer to use your User Principal Name)"
+$subscriptionId = "Azure subscription ID"
+$certResourceGroup = "Certificate Resource Group name"
+>>>>>>> 30a0fc5... Export-AppServiceCertificate_v1.ps1 Updated
 $certName = "Certificate name created in App Service Certificates"
 
 Login-AzureRmAccount
